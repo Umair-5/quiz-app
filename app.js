@@ -87,16 +87,22 @@ var i = 0;
 function quiz() {
     displayQuestion(i);
     updateTimerDisplay();
-
-    document.querySelector("#timer").innerHTML="10 Minutes"
+    document.querySelector("#questionnaires").style.display = "block";
+    document.querySelector("#start-btn").style.display = "none"
+    document.querySelector("#timer").innerHTML = "10 Minutes"
     document.querySelector("#next-btn").addEventListener('click', () => {
         marks(i)
         i++;
         if (i < questions.length) {
+            document.querySelector('input[name="options"]:checked').checked = false
             displayQuestion(i);
             startTimer();
-            
+
+
         } else {
+            document.querySelector("#questionnaires").style.display = "none";
+            document.querySelector("#ended").style.display = "flex";
+            document.querySelector("#display-score").innerHTML = `Marks = ${(number / 10) * 100}%`
             console.log("End of quiz");
             console.log(number)
         }
@@ -124,18 +130,18 @@ function timeEnded() {
     console.log("Ten minutes have passed!");
 
 }
-const tenMinutes = 10 * 60 * 1000; 
+const tenMinutes = 10 * 60 * 1000;
 let timeRemaining = tenMinutes;
 function updateTimerDisplay() {
     const minutes = Math.floor(timeRemaining / (60 * 1000));
     const seconds = Math.floor((timeRemaining % (60 * 1000)) / 1000);
-    document.querySelector("#timer").innerHTML = `Remaining time: ${minutes} minutes ${seconds} seconds`;
+    document.querySelector("#timer").innerHTML = `${minutes}:${seconds}`;
 
-    timeRemaining -= 1000; 
+    timeRemaining -= 1000;
     if (timeRemaining >= 0) {
-        setTimeout(updateTimerDisplay, 1000); 
+        setTimeout(updateTimerDisplay, 1000);
     } else {
-        timeEnded(); 
+        timeEnded();
     }
 }
 

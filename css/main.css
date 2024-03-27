@@ -1,3 +1,101 @@
+* {
+  padding: 0%;
+  margin: 0%;
+  box-sizing: border-box;
+}
+
 body {
-  background-color: goldenrod;
+  background-color: #04030F;
+  color: white;
+}
+
+h1 {
+  text-align: center;
+  margin: 5vh;
+}
+
+button {
+  cursor: pointer;
+  display: block;
+  margin: 0% auto;
+  padding: 6px 8px;
+  border: none;
+  border-radius: 3px;
+  font-weight: bold;
+  color: white;
+  background-color: #5F1A37;
+}
+
+button:hover {
+  box-shadow: 0px 0px 40px #5F1A37;
+}
+
+#questionnaires {
+  display: none;
+  min-height: 60vh;
+  max-height: -moz-fit-content;
+  max-height: fit-content;
+  border: 2px solid #5F1A37;
+  margin: 0 auto;
+  width: 95vw;
+  font-size: 1.5rem;
+}
+#questionnaires #question {
+  margin: 55px;
+}
+#questionnaires #timer {
+  position: absolute;
+  right: 40px;
+  margin-top: 10px;
+}
+#questionnaires #next-btn {
+  margin-top: 30px;
+}
+#questionnaires label,
+#questionnaires input {
+  margin: 20px 0px 20px 55px;
+}
+#questionnaires input {
+  cursor: pointer;
+}
+
+#ended {
+  display: none;
+  border: 2px solid #5F1A37;
+  width: 60vw;
+  margin: 0% auto;
+  height: 40vh;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+#ended h2 {
+  margin-bottom: 10px;
+}
+#ended h3 {
+  margin: 10px 0px 40px;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100vw;
+  text-align: center;
+}
+footer a {
+  text-decoration: none;
+  color: #5F1A37;
+}
+
+@media only screen and (max-device-width: 480px) {
+  #questionnaires {
+    padding-bottom: 20px;
+  }
+  #questionnaires label {
+    font-size: 1rem;
+    margin: 20px 0px 20px 5px;
+  }
+  input {
+    margin-right: 20px;
+  }
 }/*# sourceMappingURL=main.css.map */
